@@ -1,19 +1,9 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Home from './src/components/Home';
-import About from './src/components/About';
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import React from "react";
+import Routes from "./src/routes";
 
-
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function AppNavigator() {
-  return (
-    <NavigationContainer> 
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-        <Stack.Screen name="About" component={About} options={{ headerShown: false }}/>
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  return <Routes />;
 }
