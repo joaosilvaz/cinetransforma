@@ -34,7 +34,7 @@ export default function About() {
                     />
                     <Text style={styles.devName}>👤 Rafael Bezerea</Text>
                     <Image
-                        source={require('../../assets/banner.png')}
+                        source={require('../../assets/rafa-perfil.png')}
                         style={styles.image}
                         resizeMode="contain"
                     />
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
         marginVertical: 6,
+        paddingTop: 20
     },
     footer: {
         flexDirection: 'row',
