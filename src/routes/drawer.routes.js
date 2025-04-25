@@ -9,8 +9,9 @@ import MovieDetailsPage from "../screens/MovieDetailsPage";
 import TabRoutes from "./tab.routes";
 import MentalHealthPage from "../screens/MentalHealthPage";
 import ThemesPage from "../screens/ThemesPage";
-const Drawer = createDrawerNavigator();
+import Form from "../screens/Form";
 
+const Drawer = createDrawerNavigator();
 
 export default function DrawerRoutes() {
   return (
@@ -66,33 +67,43 @@ export default function DrawerRoutes() {
         }}
       />
       <Drawer.Screen
-  name="Descrição Filme"
-  component={MovieDetailsPage} 
-  options={{
-    drawerIcon: () => (
-      <FontAwesome5 name="hand-holding-heart" size={20} color="white" />
-    ),
-    drawerLabel: "Descrição Filme",
-  }}
-/>
-<Drawer.Screen
-  name="Temas"
-  component={ThemesPage}
-  options={{
-    drawerIcon: () => <Ionicons name="film-outline" size={20} color="white" />,
-    drawerLabel: "Temas",
-  }}
-/>
-<Drawer.Screen
-  name="Saúde Mental"
-  component={MentalHealthPage}
-  options={{
-    drawerIcon: () => (
-      <FontAwesome5 name="hand-holding-heart" size={20} color="white" />
-    ),
-    drawerLabel: "Saúde Mental",
-  }}
-/>
+        name="Descrição Filme"
+        component={MovieDetailsPage}
+        options={{
+          drawerIcon: () => (
+            <FontAwesome5 name="hand-holding-heart" size={20} color="white" />
+          ),
+          drawerLabel: "Descrição Filme",
+        }}
+      />
+      <Drawer.Screen
+        name="Temas"
+        component={ThemesPage}
+        options={{
+          drawerIcon: () => <Ionicons name="film-outline" size={20} color="white" />,
+          drawerLabel: "Temas",
+        }}
+      />
+      <Drawer.Screen
+        name="Saúde Mental"
+        component={MentalHealthPage}
+        options={{
+          drawerIcon: () => (
+            <FontAwesome5 name="hand-holding-heart" size={20} color="white" />
+          ),
+          drawerLabel: "Saúde Mental",
+        }}
+      />
+      <Drawer.Screen
+        name="Formulário"
+        component={Form}
+        options={{
+          drawerIcon: () => (
+            <FontAwesome5 name="hand-holding-heart" size={20} color="white" />
+          ),
+          drawerLabel: "Formulário",
+        }}
+      />
     </Drawer.Navigator>
   );
 }
