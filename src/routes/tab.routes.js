@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 import About from "../screens/About";
 import Home from "../screens/Home";
+import ThemesPage from "../screens/ThemesPage";
 
 const Tab = createBottomTabNavigator();
 
@@ -24,7 +25,7 @@ export default function TabRoutes({ route }) {
     >
       <Tab.Screen
         name="TabThemes"
-        component={Home}
+        component={ThemesPage}
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons
