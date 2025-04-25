@@ -1,14 +1,29 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Dimensions,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import Carousel from "react-native-reanimated-carousel";
 
+const { width } = Dimensions.get("window");
+
+const images = [
+  require("../../assets/banner.png"),
+  require("../../assets/second-banner.jpg"),
+  require("../../assets/third-banner.jpg"),
+];
 export default function Home() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
-        <Text style={styles.title}>Explicação do site</Text>
+        <Text style={styles.title}>Sobre nosso produto:</Text>
         <Text style={styles.text}>
           Nosso projeto foi criado a partir de uma forte inspiração no filme
           "Ainda Estou Aqui". Ao assistirmos à obra, percebemos como uma
@@ -26,11 +41,24 @@ export default function Home() {
           esses filmes, as pessoas podem ampliar sua visão de mundo, desenvolver
           empatia e se engajar em causas sociais.
         </Text>
-        <Image
-          source={require("../../assets/banner.png")}
-          style={styles.image}
-          resizeMode="contain"
-        />
+        <View style={styles.carouselContainer}>
+          <Carousel
+            width={width * 0.9}
+            height={250}
+            data={images}
+            scrollAnimationDuration={1000}
+            renderItem={({ item }) => (
+              <View style={styles.carouselItem}>
+                <Image
+                  source={item}
+                  style={styles.image}
+                  resizeMode="contain"
+                />
+              </View>
+            )}
+            loop
+          />
+        </View>
       </ScrollView>
     </View>
   );
@@ -57,23 +85,15 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   image: {
-    width: 600,
-    height: 400,
-    borderRadius: 8,
+    width: width * 1,
+    height: 300,
+    borderRadius: 10,
   },
-  footer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    paddingVertical: 10,
-    borderTopWidth: 1,
-    borderColor: "#333",
-    backgroundColor: "#000",
-  },
-  footerItem: {
+  carouselItem: {
+    justifyContent: "center",
     alignItems: "center",
-  },
-  footerText: {
-    color: "red",
-    fontSize: 12,
+    backgroundColor: "#000",
+    borderRadius: 10,
+    margin: 10,
   },
 });

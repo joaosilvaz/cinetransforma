@@ -3,13 +3,12 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import DiversityPage from "../screens/DiversityPage";
-import Home from "../screens/Home";
-import SustentabilityPage from "../screens/SustentabilityPage";
-import MovieDetailsPage from "../screens/MovieDetailsPage";
-import TabRoutes from "./tab.routes";
-import MentalHealthPage from "../screens/MentalHealthPage";
-import ThemesPage from "../screens/ThemesPage";
 import Form from "../screens/Form";
+import MentalHealthPage from "../screens/MentalHealthPage";
+import MovieDetailsPage from "../screens/MovieDetailsPage";
+import SustentabilityPage from "../screens/SustentabilityPage";
+import ThemesPage from "../screens/ThemesPage";
+import TabRoutes from "./tab.routes";
 
 const Drawer = createDrawerNavigator();
 
@@ -67,24 +66,6 @@ export default function DrawerRoutes() {
         }}
       />
       <Drawer.Screen
-        name="Descrição Filme"
-        component={MovieDetailsPage}
-        options={{
-          drawerIcon: () => (
-            <FontAwesome5 name="hand-holding-heart" size={20} color="white" />
-          ),
-          drawerLabel: "Descrição Filme",
-        }}
-      />
-      <Drawer.Screen
-        name="Temas"
-        component={ThemesPage}
-        options={{
-          drawerIcon: () => <Ionicons name="film-outline" size={20} color="white" />,
-          drawerLabel: "Temas",
-        }}
-      />
-      <Drawer.Screen
         name="Saúde Mental"
         component={MentalHealthPage}
         options={{
@@ -95,11 +76,31 @@ export default function DrawerRoutes() {
         }}
       />
       <Drawer.Screen
+        name="Descrição Filme"
+        component={MovieDetailsPage}
+        options={{
+          drawerIcon: () => (
+            <MaterialIcons name="movie" size={20} color="white" />
+          ),
+          drawerLabel: "Descrição Filme",
+        }}
+      />
+      <Drawer.Screen
+        name="Temas"
+        component={ThemesPage}
+        options={{
+          drawerIcon: () => (
+            <Ionicons name="film-outline" size={20} color="white" />
+          ),
+          drawerLabel: "Temas",
+        }}
+      />
+      <Drawer.Screen
         name="Formulário"
         component={Form}
         options={{
           drawerIcon: () => (
-            <FontAwesome5 name="hand-holding-heart" size={20} color="white" />
+            <MaterialIcons name="rate-review" size={20} color="white" />
           ),
           drawerLabel: "Formulário",
         }}

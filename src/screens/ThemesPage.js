@@ -1,20 +1,48 @@
-import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ThemesPage() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Escolha um Tema</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Diversidade")}>
+      <View style={styles.image}>
+        <Image
+          source={require("../../assets/sofa_cinema.png")}
+          style={{ width: 550, height: 250 }}
+          resizeMode="contain"
+        />
+      </View>
+      <View style={styles.titleContainer}>
+        <Image
+          source={require("../../assets/pipoca.png")}
+          style={{ width: 30, height: 30 }}
+          resizeMode="contain"
+        />
+        <Text style={styles.title}>Escolha um Tema</Text>
+        <Image
+          source={require("../../assets/pipoca.png")}
+          style={{ width: 30, height: 30 }}
+          resizeMode="contain"
+        />
+      </View>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Diversidade")}
+      >
         <Text style={styles.buttonText}>Diversidade</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Sustentabilidade")}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Sustentabilidade")}
+      >
         <Text style={styles.buttonText}>Sustentabilidade</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Saúde Mental")}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Saúde Mental")}
+      >
         <Text style={styles.buttonText}>Saúde Mental</Text>
       </TouchableOpacity>
     </View>
@@ -28,6 +56,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+  },
+  titleContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    width: "100%",
   },
   title: {
     fontSize: 24,
@@ -46,5 +80,12 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontWeight: "bold",
+  },
+  image: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    marginBottom: 20,
   },
 });
